@@ -12,14 +12,11 @@ module.exports = {
         rules: [
             {
                 test: /\.css$/i,
-                use: [
-                    "style-loader", //2. Inject styles into DOM
-                    "css-loader", //1. Turns css into JavaScript
-                ],
+                use: ["style-loader", "css-loader"],
             },
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
-                use: "asset/resource",
+                type: "asset/resource",
             },
         ],
     },

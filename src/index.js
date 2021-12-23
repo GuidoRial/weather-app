@@ -1,7 +1,8 @@
 import "./style.css";
-import "./switch.css";
 import { getFullDate } from "./getFullDate";
 import { KtoF, KtoC } from "./units";
+import GithubIcon from "./github-logo.png";
+import LinkedinIcon from "./linkedin-logo.png"
 
 const city = document.getElementById("city");
 const date = document.getElementById("date");
@@ -13,8 +14,7 @@ const tempMin = document.getElementById("tempMin");
 const cityInput = document.getElementById("cityInput");
 const checkbox = document.getElementById("checkbox");
 const form = document.getElementById("form");
-const githubLogo = document.getElementById("githubLogo");
-const linkedinLogo = document.getElementById("linkedinLogo");
+const imgContainer = document.getElementById("imgContainer");
 
 async function getWeather(cityName) {
     try {
@@ -60,6 +60,7 @@ form.addEventListener("submit", (e) => {
     } else {
         getWeather(cityInput.value);
     }
+    cityInput.value = "";
 });
 
 function openGithub() {
@@ -70,6 +71,13 @@ function openLinkedin() {
     window.open("https://www.linkedin.com/in/guido-rial-275552221/", "_blank");
 }
 
+
+const githubLogo = document.createElement("img");
+githubLogo.src = GithubIcon;
+const linkedinLogo = document.createElement("img");
+linkedinLogo.src = LinkedinIcon;
+imgContainer.appendChild(githubLogo);
+imgContainer.appendChild(linkedinLogo);
 githubLogo.addEventListener("click", openGithub);
 linkedinLogo.addEventListener("click", openLinkedin);
 
