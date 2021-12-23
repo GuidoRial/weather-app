@@ -2,7 +2,7 @@ import "./style.css";
 import { getFullDate } from "./getFullDate";
 import { KtoF, KtoC } from "./units";
 import GithubIcon from "./github-logo.png";
-import LinkedinIcon from "./linkedin-logo.png"
+import LinkedinIcon from "./linkedin-logo.png";
 
 const city = document.getElementById("city");
 const date = document.getElementById("date");
@@ -24,19 +24,35 @@ async function getWeather(cityName) {
         );
         const weatherData = await response.json();
         const setTempToF = function () {
-            temperature.innerText = `${KtoF(weatherData.main.temp)} °F`;
-            feelsLike.innerText = `${KtoF(weatherData.main.feels_like)} °F`;
-            tempMax.innerText = `${KtoF(weatherData.main.temp_max)} °F`;
-            tempMin.innerText = `${KtoF(weatherData.main.temp_min)} °F`;
+            temperature.innerText = `Temperature: ${KtoF(
+                weatherData.main.temp
+            )} °F`;
+            feelsLike.innerText = `It feels like: ${KtoF(
+                weatherData.main.feels_like
+            )} °F`;
+            tempMax.innerText = `Max. temperature: ${KtoF(
+                weatherData.main.temp_max
+            )} °F`;
+            tempMin.innerText = `Min. temperature: ${KtoF(
+                weatherData.main.temp_min
+            )} °F`;
         };
 
         const setTempToC = function () {
-            temperature.innerText = `${KtoC(weatherData.main.temp)} °C`;
-            feelsLike.innerText = `${KtoC(weatherData.main.feels_like)} °C`;
-            tempMax.innerText = `${KtoC(weatherData.main.temp_max)} °C`;
-            tempMin.innerText = `${KtoC(weatherData.main.temp_min)} °C`;
+            temperature.innerText = `Temperature: ${KtoC(
+                weatherData.main.temp
+            )} °C`;
+            feelsLike.innerText = `It feels like: ${KtoC(
+                weatherData.main.feels_like
+            )} °C`;
+            tempMax.innerText = `Max. temperature: ${KtoC(
+                weatherData.main.temp_max
+            )} °C`;
+            tempMin.innerText = `Min. temperature: ${KtoC(
+                weatherData.main.temp_min
+            )} °C`;
         };
-        city.innerText = weatherData.name;
+        city.innerText = `The weather in ${weatherData.name} city`;
         date.innerText = getFullDate();
         weather.innerText = weatherData.weather[0].main;
         setTempToF();
@@ -61,6 +77,7 @@ form.addEventListener("submit", (e) => {
         getWeather(cityInput.value);
     }
     cityInput.value = "";
+    setTempToF();
 });
 
 function openGithub() {
@@ -70,7 +87,6 @@ function openGithub() {
 function openLinkedin() {
     window.open("https://www.linkedin.com/in/guido-rial-275552221/", "_blank");
 }
-
 
 const githubLogo = document.createElement("img");
 githubLogo.src = GithubIcon;
