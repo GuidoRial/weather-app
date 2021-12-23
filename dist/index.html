@@ -1,1 +1,47 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width,initial-scale=1"/><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"/><title>Weather App</title><script defer="defer" src="main.1a9a44f955b2d9bab05d.js"></script></head><body><main><div id="weatherDisplay"><h2 id="city">City</h2><h4 id="date">date</h4><h3 id="temperature">Temperature °C</h3><p id="weather">Weather</p><p id="feelsLike">feels like</p><p id="tempMax">temp max</p><p id="tempMin">temp min</p></div><div id="formDisplay"><form action="#" novalidate id="form"><div><input placeholder="City" name="city" id="cityInput"/></div><button id="searchBtn">Search</button></form><div><label class="switch"><input id="checkbox" type="checkbox"/> <span class="slider round"></span></label></div><div id="imgContainer"><img src="../src/github-logo.png" alt="github-logo" id="githubLogo"/> <img src="../src/linkedin-logo.png" alt="linkedin-logo" id="linkedinLogo"/></div></div></main></body></html>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Weather App</title>
+    <script defer src="main.js"></script></head>
+    <body>
+        <main>
+            <div id="weatherDisplay">
+                <h2 id="city">City</h2>
+                <h4 id="date">date</h4>
+                <h3 id="temperature">Temperature °C</h3>
+                <p id="weather">Weather</p>
+                <p id="feelsLike">feels like</p>
+                <p id="tempMax">temp max</p>
+                <p id="tempMin">temp min</p>
+            </div>
+            <div id="formDisplay">
+                <form action="#" method="GET" novalidate id="form">
+                    <div>
+                        <input
+                            placeholder="City"
+                            type="text"
+                            name="city"
+                            id="cityInput"
+                        />
+                    </div>
+                    <button id="searchBtn">Search</button>
+                </form>
+                <div>
+                    <!-- Rounded switch -->
+                    <label class="switch">
+                        <input id="checkbox" type="checkbox" />
+                        <span class="slider round"></span>
+                    </label>
+                    <!-- Rounded switch -->
+                </div>
+                <div id="imgContainer">
+                    <img src="../src/github-logo.png" alt="github-logo" id="githubLogo"/>
+                    <img src="../src/linkedin-logo.png" alt="linkedin-logo" id="linkedinLogo" />
+                </div>
+            </div>
+        </main>
+    </body>
+</html>
